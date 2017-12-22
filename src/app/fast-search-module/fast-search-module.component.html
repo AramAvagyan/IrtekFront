@@ -1,0 +1,39 @@
+<div class="FastSM">
+    <mat-card>
+                
+
+        <div class="row">
+            <mat-form-field class="col-md-12 col-sm-12">
+                <input matInput type="text" placeholder="Ակտի Վերնագիր"  [(ngModel)]="ActTitle"/>
+                <button mat-button *ngIf="ActTitle" matSuffix mat-icon-button aria-label="Clear" (click)="ActTitle=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+        <div class="col-xs-12 col-sm-6 col-md-2">
+            <mat-form-field >
+                <input matInput placeholder="Ակտի Համար" value="" [(ngModel)]="ActNumber">
+                <button mat-button *ngIf="ActNumber" matSuffix mat-icon-button aria-label="Clear" (click)="ActNumber=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2 col-md-offset-1">
+                <mat-form-field >
+                    <input matInput placeholder="Ակտի Տարի" value="" [(ngModel)]="ActYear">
+                    <button mat-button *ngIf="ActYear" matSuffix mat-icon-button aria-label="Clear" (click)="ActYear=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            
+            <div class="col-md-2 col-sm-12 col-md-offset-5">
+                <button mat-raised-button color="primary" (click)="Search()" routerLink="/SearchRes">Որոնել</button>
+            </div>
+        </div>
+
+
+    </mat-card>
+
+</div>
