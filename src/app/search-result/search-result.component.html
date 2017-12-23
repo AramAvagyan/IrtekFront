@@ -5,7 +5,7 @@
            <div class="row">
                <div class="col-xs-1 checkStatus">
                    <div  class="CheckboxStatus" > 
-                      <input type="checkbox"  [(ngModel)]="value.id" > 
+                      <mat-checkbox  [(ngModel)]="value.check" (change)=" checkBoxValueChange($event,value.id)"></mat-checkbox>
                       <img *ngIf="value.act_Status" src="../../assets/SearchRes/1.png" width="30" height="auto" alt="" class="imgclass">
                       <img *ngIf="!value.act_Status" src="../../assets/SearchRes/0.png" width="30" height="auto" alt="" class="imgclass">
                     </div>

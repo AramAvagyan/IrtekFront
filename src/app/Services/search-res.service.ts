@@ -22,15 +22,20 @@ export class SearchResService {
     this.FastSearchModel.Act_Year=ActYear;
   }
 
-  Values:any;
+  Values=[];
   
     getValues(){
       return this.http.get(
         "/Services/GetActs"+"?page="+this.page+"&limit="+this.limit+"&Searchstring="+JSON.stringify(this.FastSearchModel)
       ).map(response=>response.json()).map(response=>{this.Values=response.records;this.listLenght=response.total})
-      .subscribe(); 
-       
-      
+      .subscribe();     
+    }
+
+    addCheckSession(id){
+      this.http.request("/Services/AddCheckSession?ID="+id);
+    }
+    delCheckSession(id){
+      this.http.request("/Services/DelCheckSession?ID="+id);
     }
   
 

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchResService } from '../Services/search-res.service';
-import {PageEvent} from '@angular/material';
+
 
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
+
 export class SearchResultComponent implements OnInit {
   
   
@@ -15,16 +16,29 @@ export class SearchResultComponent implements OnInit {
     this.Searchres.page=pageEvent.pageIndex+1;
     this.Searchres.getValues();
   }
-  checkBox(event){
+  checkBoxValueChange(event,id){
     
-    if(event.srcElement.checked=true){
-      event.path[4].style.backgroundColor="#72d6fb"
+    if(event.checked==true){
+      this.Searchres.addCheckSession(id)
+      // for(let i=0;i<this.Searchres.Values.length;i++){
+      //   if(this.Searchres.Values[i].id==id){
+      //     this.Searchres.Values[i].check=true;
+      //   }
+      // }
 
     }
     else{
-      event.path[4].style.backgroundColor="white"
+      this.Searchres.delCheckSession(id)
+      // for(let i=0;i<this.Searchres.Values.length;i++){
+      //   if(this.Searchres.Values[i].id==id){
+      //     this.Searchres.Values[i].check=false;
+      //   }
+      // }
     }
   }
+
+  
+
   
   constructor(private Searchres:SearchResService) { }
 

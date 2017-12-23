@@ -1,5 +1,5 @@
 import { SearchResService } from './Services/search-res.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
@@ -49,7 +49,7 @@ import { MatCardModule, MatPaginator, MatPaginatorModule, MatCheckboxModule } fr
         { path: 'Main', component: MainComponent },
         { path: 'FastSearch', component: FastSearchComponent },
         { path: 'AdvSearch',      component: AdvSearchComponent },
-        {path: 'SearchRes',   component: SearchResultComponent},
+        { path: 'SearchRes',   component: SearchResultComponent},
         { path: '',
           redirectTo: 'Main',
           pathMatch: 'full'
